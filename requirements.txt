@@ -3,3 +3,8 @@ pandas
 matplotlib
 seaborn
 scikit-learn
+statsmodels
+xgboost
+wordcloud
+ipython
+joblib

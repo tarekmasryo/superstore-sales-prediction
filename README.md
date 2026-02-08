@@ -1,58 +1,67 @@
-# 📊 Superstore Sales Analysis (2014--2017)
+# 🏬 Superstore Sales Prediction
 
-A complete **end-to-end data analysis & predictive modeling project**
-using the famous *Superstore* dataset.\
-The goal: **find business insights** and **build models** that help
-managers boost profit and growth.
+A production-style **notebook repo** for the classic Superstore dataset (2014–2017):  
+**EDA → business insights → profit prediction → saved artifacts**.
 
-------------------------------------------------------------------------
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Notebook](https://img.shields.io/badge/Format-Jupyter%20Notebook-orange)
 
-## 🚀 Project Highlights
+---
 
--   **Exploratory Analysis (EDA)**
-    -   Seasonality: December spikes, monthly/annual trends.
-    -   Regional, state, and city-level sales & profit analysis.
-    -   Category & sub-category performance (winners vs loss-makers).
-    -   Customer-level deep dives (RFM segmentation, cohort retention).
--   **Business KPIs**
-    -   Total Sales, Profit, Orders, Unique Customers.
-    -   Average Order Value & Profit Margins by Category.
-    -   Shipping time distribution & impact on customer experience.
--   **Customer Analytics**
-    -   **RFM Analysis** → Champions, Loyal, Potential, At-Risk.
-    -   **Cohort Analysis** → retention and re-engagement insights.
--   **Predictive Modeling**
-    -   Features engineered: seasonality (Year/Month), discounts, unit
-        economics, shipping time.
-    -   **RandomForest Regressor** (baseline & tuned) vs **XGBoost**.
-    -   Cross-validation with R² and RMSE metrics.
-    -   Feature importance to understand key profit drivers.
--   **Forecasting**
-    -   Holt--Winters Exponential Smoothing for 6-month sales forecast.
-    -   Seasonal patterns captured for inventory & staffing planning.
+## ✅ What’s inside
 
-------------------------------------------------------------------------
+- 📊 Decision-ready EDA (seasonality, geo/product performance, margins)
+- 👥 Customer analytics (RFM segmentation + cohort-style retention views)
+- 🤖 Profit modeling (`Profit` as target) with:
+  - RandomForest baseline + tuning
+  - XGBoost baseline (when available)
+  - CV metrics (R² / RMSE) + feature importance
+- 📦 Saved outputs in `artifacts/` (model + metrics table)
 
-## 📈 Key Insights
+---
 
--   **December** is consistently the top sales month.\
--   **West region** & **Technology category** dominate performance.
--   Shipping time averages **\~3--4 days**; improving speed could drive
-    retention.\
--   Loss-making sub-categories (e.g., Tables, Bookcases) need review of
-    pricing & discounts.\
--   **XGBoost outperformed RandomForest** with the lowest RMSE (\~26 vs
-    \~29).
+## 📁 Repo layout
 
-------------------------------------------------------------------------
+```text
+.
+├── data-analysis-for-superstore-dataset.ipynb
+├── data/
+│   └── raw/                 # place the dataset file here (not tracked)
+├── artifacts/               # saved model + metrics (not tracked)
+├── repo_utils/
+│   └── pathing.py           # local data/raw + Kaggle fallback
+├── CASE_STUDY.md
+├── requirements.txt
+├── LICENSE
+└── .gitignore
+```
 
-## 🛠️ Tech Stack
+---
 
--   **Python**: pandas, numpy, matplotlib, seaborn
--   **Machine Learning**: scikit-learn, XGBoost\
--   **Time Series**: statsmodels (seasonal decomposition,
-    Holt--Winters)\
--   **Visualization**: seaborn, matplotlib, WordCloud
+## 🚀 Run locally
 
-------------------------------------------------------------------------
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+```
 
+Open and run the notebook top-to-bottom.
+
+---
+
+## 📦 Dataset
+
+Expected file name: **`Sample - Superstore.csv`**
+
+- **Local (recommended):** put it in `data/raw/`
+- **Kaggle:** the notebook falls back to `/kaggle/input/superstore-dataset-final/...`
+
+The path logic lives in: `repo_utils/pathing.py`.
+
+---
+
+## 🧾 Case Study
+
+See **CASE_STUDY.md** for the project story, decisions, and next steps.
