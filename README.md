@@ -55,7 +55,7 @@ Open and run the notebook top-to-bottom.
 
 Expected file name: **`Sample - Superstore.csv`**
 
-- **Local (recommended):** put it in `data/raw/`
+- **Local (recommended):** put it in `data/raw/` (see `data/raw/README.md`)
 - **Kaggle:** the notebook falls back to `/kaggle/input/superstore-dataset-final/...`
 
 The path logic lives in: `repo_utils/pathing.py`.
