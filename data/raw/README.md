@@ -1,6 +1,11 @@
 # data/raw
 
-Place the raw dataset file here (not tracked in Git).
+Place the raw Superstore dataset file here.
 
 Expected file name:
-- `Sample - Superstore.csv`
+
+```text
+Sample - Superstore.csv
+```
+
+This folder is kept in the repo with `.gitkeep`, but raw data files are ignored by Git.
